@@ -19,11 +19,17 @@ public class Part2 {
                 "3260856-3442902,3-20,887467-1022885,975-1863,5897-13354,43667065-43786338";
 
         var part1Strategy = new Part1Strategy();
+        var part2Strategy = new Part2Strategy();
 
 
-        var invalidIds = InputParser.getLongStreamFromInput(input)
+        var invalidIdsPart1 = InputParser.getLongStreamFromInput(input)
                         .filter(id -> part1Strategy.isIdValid().negate().test(id));
-        LOGGER.info("sum is {}", invalidIds.sum());
+        var invalidIdsPart2 = InputParser.getLongStreamFromInput(input)
+                .filter(id -> part2Strategy.isIdValid().negate().test(id));
+
+
+        LOGGER.info("PART1: sum is {}", invalidIdsPart1.sum());
+        LOGGER.info("PART2: sum is {}", invalidIdsPart2.sum());
     }
 
 }
