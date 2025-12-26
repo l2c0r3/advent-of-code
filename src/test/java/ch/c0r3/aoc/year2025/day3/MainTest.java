@@ -8,7 +8,7 @@ import java.util.stream.Stream;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class Part1Test {
+class MainTest {
 
     private static Stream<Arguments> idProvider() {
         return Stream.of(
@@ -21,9 +21,9 @@ class Part1Test {
 
     @ParameterizedTest
     @MethodSource("idProvider")
-    void getJoltage_returnsExpected(String input, int expected) {
+    void getJoltage_Part1_returnsExpected(String input, int expected) {
         // Act
-        var result = Part1.getJoltage(input);
+        var result = Main.getJoltagePart1(input);
 
         // Assert
         assertEquals(expected, result);
